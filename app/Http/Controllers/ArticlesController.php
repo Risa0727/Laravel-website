@@ -23,12 +23,19 @@ class ArticlesController extends Controller
       return view('articles.create');
     }
 
-    public function store() {
-      $inputs = \Request::all();
-
+    public function store(Request $request) {
       // dd($inputs);
-      // store data into DB
-      Article::create($inputs);
+      $rules = [
+        'title' => 'required|min:3',
+        'body' => 'required',
+        'published_at' => 'required|date',
+      ];
+
+      // コントローラの validate() メソッドを実行
+      $validatedData = $this->validate($request, $rules);
+
+      // save data to DB
+      Article::create($validatedData);
 
       return redirect('articles');
     }
