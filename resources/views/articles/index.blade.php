@@ -10,9 +10,9 @@
 
 
   @foreach($articles as $article)
-    <article>
-      <h2>
-        <a href="{{ url('articles', $article->id) }}">
+    <article class="list-group">
+      <h2 class="list-group-item">
+        <a class="btn btn-link" href="{{ url('articles', $article->id) }}">
         {{ $article->title }}
         </a>
       </h2>
