@@ -12,7 +12,7 @@ class ArticlesController extends Controller
     //
     public function index() {
       // $articles = Article::all();
-      $articles = Article::orderBy('published_at')
+      $articles = Article::latest('published_at')
                     ->latest('created_at')
                     ->where('published_at', "<=", Carbon::now())
                     // ->take(10)
@@ -31,7 +31,7 @@ class ArticlesController extends Controller
     }
 
     public function store(ArticleRequest $request) {
-      // dd($inputs);
+
 
       // save data to DB
        $validated = $request->validated();
