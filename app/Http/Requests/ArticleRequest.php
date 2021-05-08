@@ -13,7 +13,8 @@ class ArticleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // return false; // false: need an Authority to add an article
+        return true;// true: anyone can do
     }
 
     /**
@@ -24,7 +25,9 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:3',
+            'body' =>'required',
+            'published_at' => 'required|date',
         ];
     }
 }
