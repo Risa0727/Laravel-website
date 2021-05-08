@@ -23,13 +23,16 @@ Route::get('/about', 'App\Http\Controllers\PageController@about');
 
 Route::get('/memo', 'App\Http\Controllers\PageController@memo');
 
+
 Route::get('/articles', 'App\Http\Controllers\ArticlesController@index');
 // 記事作成
 Route::get('/articles/create', 'App\Http\Controllers\ArticlesController@create');
-
 Route::get('/articles/{id}', 'App\Http\Controllers\ArticlesController@show');
 // 保存　
 Route::post('/articles', 'App\Http\Controllers\ArticlesController@store');
+
+Route::get('articles/{id}/edit', 'App\Http\Controllers\ArticlesController@edit');
+Route::patch('articles/{id}', 'App\Http\Controllers\ArticlesController@update');
 
 
 

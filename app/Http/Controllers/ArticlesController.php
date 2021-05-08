@@ -34,11 +34,23 @@ class ArticlesController extends Controller
 
 
       // save data to DB
-       $validated = $request->validated();
+      $validated = $request->validated();
       Article::create($validated);
 
       return redirect('articles');
     }
 
+    public function edit($id) {
+      $article = Article::findOrFail($id);
+      return view('articles.edit', compact('article'));
+    }
+
+    public function update(ArticleRequest $request, $id) {
+      $article = Article::findOrFail($id);
+
+      $article->update($request->validated());
+
+      return redirect(url('articles', [$article->id]));
+    }
 
 }
