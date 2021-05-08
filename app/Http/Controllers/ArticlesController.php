@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 // use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Http\Requests\ArticleRequest;
-use Carbon\Carbon;
+// use Carbon\Carbon;
 
 class ArticlesController extends Controller
 {
@@ -14,7 +14,7 @@ class ArticlesController extends Controller
       // $articles = Article::all();
       $articles = Article::latest('published_at')
                     ->latest('created_at')
-                    ->where('published_at', "<=", Carbon::now())
+                    ->published()
                     // ->take(10)
                     ->get();
 
