@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 // use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Http\Requests\ArticleRequest;
+use Carbon\Carbon;
 
 class ArticlesController extends Controller
 {
     //
     public function index() {
-      $articles = Article::all();
+      // $articles = Article::all();
+      $articles = Article::orderBy('published_at')
+                    ->latest('created_at')
+                    ->where('published_at', "<=", Carbon::now())
+                    // ->take(10)
+                    ->get();
 
       return view('articles.index', compact('articles'));
     }
