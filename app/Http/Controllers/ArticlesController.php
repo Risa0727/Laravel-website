@@ -27,7 +27,8 @@ class ArticlesController extends Controller
       return view('articles.show', compact('article'));
     }
     public function create() {
-      return view('articles.create');
+      $article = '';
+      return view('articles.create', compact('article'));
     }
 
     public function store(ArticleRequest $request) {
