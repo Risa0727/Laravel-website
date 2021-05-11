@@ -16,9 +16,7 @@
       class="btn btn-primary">
       Edit
     </a>
-    {!! Form::open(['method' => 'DELETE', 'url' => ['articles', $article->id], 'class' => 'd-inline']) !!}
-      {!! Form::submit('DELETE', ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!}
+    {!! delete_form(['articles', $article->id]) !!}
 
     <a href="{{ action('App\Http\Controllers\ArticlesController@index') }}"
       class="btn btn-secondary float-right">
