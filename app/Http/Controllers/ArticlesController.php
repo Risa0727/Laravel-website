@@ -38,7 +38,8 @@ class ArticlesController extends Controller
       $validated = $request->validated();
       Article::create($validated);
 
-      return redirect('articles');
+      return redirect('articles')
+              ->with('message', 'The article has been created.');
     }
 
     public function edit($id) {
@@ -51,14 +52,16 @@ class ArticlesController extends Controller
 
       $article->update($request->validated());
 
-      return redirect(url('articles', [$article->id]));
+      return redirect(url('articles', [$article->id]))
+                ->with('message', 'The article has been updated.');
     }
 
     public function destroy($id) {
       $article = Article::findOrFail($id);
       $article->delete();
 
-      return redirect('articles');
+      return redirect('articles')
+              ->with('message', 'The article has been deleted.');
     }
 
 }
