@@ -180,6 +180,8 @@ return [
 
         // @r 6, May 2021
         Collective\Html\HtmlServiceProvider::class,
+        // @r 11, May 2021
+        Laracasts\Flash\FlashServiceProvider::class,
     ],
 
     /*
@@ -236,6 +238,9 @@ return [
         // @r 6, May 2021
         'Form' => Collective\Html\FormFacde::class,
         'Html' => Collective\Html\HtmlFacde::class,
+
+        // @r 11, May 2021
+        'Flash' => Laracasts\Flash\Flash::class,
 
     ],
 

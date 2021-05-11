@@ -37,9 +37,9 @@ class ArticlesController extends Controller
       // save data to DB
       $validated = $request->validated();
       Article::create($validated);
+      \Flash::success('The article has been created.');
 
-      return redirect('articles')
-              ->with('message', 'The article has been created.');
+      return redirect('articles');
     }
 
     public function edit($id) {
@@ -51,17 +51,17 @@ class ArticlesController extends Controller
       $article = Article::findOrFail($id);
 
       $article->update($request->validated());
+      \Flash::success('The article has been updated.');
 
-      return redirect(url('articles', [$article->id]))
-                ->with('message', 'The article has been updated.');
+      return redirect(url('articles', [$article->id]));
     }
 
     public function destroy($id) {
       $article = Article::findOrFail($id);
       $article->delete();
+      \Flash::success('The article has been deleted');
 
-      return redirect('articles')
-              ->with('message', 'The article has been deleted.');
+      return redirect('articles');
     }
 
 }
