@@ -32,14 +32,13 @@ class ArticlesController extends Controller
     }
 
     public function store(ArticleRequest $request) {
-
-
       // save data to DB
       $validated = $request->validated();
       Article::create($validated);
       \Flash::success('The article has been created.');
 
-      return redirect('articles');
+      // return redirect('articles');
+      return redirect()->route('articles.index');
     }
 
     public function edit($id) {
@@ -53,7 +52,8 @@ class ArticlesController extends Controller
       $article->update($request->validated());
       \Flash::success('The article has been updated.');
 
-      return redirect(url('articles', [$article->id]));
+      // return redirect(url('articles', [$article->id]));
+      return redirect()->route('articles.index', [$article->id]);
     }
 
     public function destroy($id) {
@@ -61,7 +61,8 @@ class ArticlesController extends Controller
       $article->delete();
       \Flash::success('The article has been deleted');
 
-      return redirect('articles');
+      // return redirect('articles');
+      return redirect()->route('articles.index');
     }
 
 }

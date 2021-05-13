@@ -12,13 +12,14 @@
   <hr/>
 
   <div>
-    <a href="{{ action('App\Http\Controllers\ArticlesController@edit', [$article->id]) }}"
+    <a href="{{ route('articles.edit', [$article->id]) }}"
       class="btn btn-primary">
       Edit
     </a>
-    {!! delete_form(['articles', $article->id]) !!}
+    {{-- {!! delete_form(['articles', $article->id]) !!} --}}
+    {!! delete_form(route('articles.destroy', [$article->id])) !!}
 
-    <a href="{{ action('App\Http\Controllers\ArticlesController@index') }}"
+    <a href="{{ route('articles.index') }}"
       class="btn btn-secondary float-right">
       Back to a list
     </a>
