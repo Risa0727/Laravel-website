@@ -1,9 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom sticky-top">
+<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand mr-4" href="{{ route('home') }}">
-            {{-- <x-jet-application-mark width="36" /> --}}
-            <img src="{{  asset('images/tige2-150x150-1.jpg') }}" class="logo" alt="logo" width="50" height="50">
+        <a class="navbar-brand mr-4" href="/">
+            <x-jet-application-mark width="36" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -12,18 +11,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('home') }}">HOME</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('about') }}">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
-                </li>
-                {{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('DASHBOARD') }}
-                </x-jet-nav-link> --}}
+                <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    {{ __('Dashboard') }}
+                </x-jet-nav-link>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -71,25 +61,6 @@
                 @endif
 
                 <!-- Settings Dropdown -->
-                <ul class="navbar-nav">
-                  @if (Route::has('login'))
-                      @auth
-                        <li class="nav-item">
-                          <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
-                        </li>
-                      @else
-                        <li class="nav-item">
-                          <a href="{{ route('login') }}" class="nav-link">Log in</a>
-                        </li>
-                          @if (Route::has('register'))
-                            <li class="nav-item">
-                              <a href="{{ route('register') }}" class="nav-link">Register</a>
-                            </li>
-                          @endif
-                      @endif
-                  @endif
-                </ul>
-                {{-- --@r --}}
                 @auth
                     <x-jet-dropdown id="settingsDropdown">
                         <x-slot name="trigger">

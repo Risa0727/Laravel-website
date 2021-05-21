@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-}) ->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// }) ->name('home');
 
 
 Route::get('/contact', 'App\Http\Controllers\PageController@contact')->name('contact');
@@ -33,7 +33,8 @@ Route::get('/memo', 'App\Http\Controllers\PageController@memo')->name('memo');
 // Route::get('articles/{id}/edit', 'App\Http\Controllers\ArticlesController@edit')->name('articles.edit');
 // Route::patch('articles/{id}', 'App\Http\Controllers\ArticlesController@update')->name('articles.update');
 // Route::delete('articles/{id}', 'App\Http\Controllers\ArticlesController@destroy')->name('articles.destroy');
-// Route::get('/', 'App\Http\Controllers\ArticlesController@index')->name('home'); // home画面
+
+Route::get('/', 'App\Http\Controllers\ArticlesController@index')->name('home'); // home画面
 Route::resource('articles', 'App\Http\Controllers\ArticlesController');
 
 // test page

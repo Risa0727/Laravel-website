@@ -9,7 +9,7 @@
   <script src="{{ asset('/js/app.js') }}"></script>
 </head>
 <body>
-  @include('navbar')
+  @include('navigation-menu')
 
   <div class="container py-4">
         @include('flash::message')
