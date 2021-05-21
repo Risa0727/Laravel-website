@@ -2,9 +2,15 @@
 @section('content')
 <div class="header d-flex justify-content-between">
   <h1>Articles</h1>
-  <div class="">
-    <a href='./articles/create' class="btn btn-primary">Create New</a>
-  </div>
+  @if (Route::has('login'))
+    <div class="">
+      @auth
+        <a href='./articles/create' class="btn btn-primary">Create New</a>
+      @else
+        <a class="btn btn-primary disabled" aria-disabled="true">Create New</a>
+      @endauth
+    </div>
+  @endif
 </div>
   <hr/>
 
