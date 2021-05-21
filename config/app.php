@@ -182,6 +182,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         // @r 11, May 2021
         Laracasts\Flash\FlashServiceProvider::class,
+        // @r 21, May 2021
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
     ],
 
     /*
