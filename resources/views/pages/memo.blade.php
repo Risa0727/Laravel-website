@@ -71,4 +71,10 @@
     </tbody>
   </table>
 
+  <hr>
+  <h2>Laravevl8でユーザ認証機能の追加</h2>
+  <ul class="list-group">
+    <li class="list-group-item">Laravel Jetsreamのインストール(<a href="https://note.com/laravelstudy/n/nf2179cc45a29">Ref</a>)</li>
+  </ul>
+
 @endsection
