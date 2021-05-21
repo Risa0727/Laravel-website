@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom sticky-top">
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand mr-4" href="{{ route('home') }}">
             {{-- <x-jet-application-mark width="36" /> --}}
-            <img src="{{  asset('images/tige2-150x150-1.jpg') }}" class="logo" alt="logo" width="50" height="50">
+            <img src="{{  asset('images/logo.png') }}" class="logo" alt="logo" width="80" height="50">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
