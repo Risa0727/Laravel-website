@@ -27,7 +27,7 @@
       {{-- Right side --}}
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">LOGIN</a>
+          <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">REGISTER</a>
