@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="header d-flex justify-content-between">
-  <h1>Articles</h1>
+  <h1>Bulletin board</h1>
   @if (Route::has('login'))
     <div class="">
       @auth

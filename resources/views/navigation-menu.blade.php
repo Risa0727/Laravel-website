@@ -18,9 +18,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('about') }}">ABOUT</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                   <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
-                </li>
+                </li> --}}
                 {{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('DASHBOARD') }}
                 </x-jet-nav-link> --}}
