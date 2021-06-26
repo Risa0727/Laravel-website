@@ -29,6 +29,9 @@
                     <li class="nav-item">
                       <a class="nav-link" href="{{ route('memo') }}">MEMO</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('hello') }}">TEST</a>
+                    </li>
                   @endif
             </ul>
             <!-- Right Side Of Navbar -->

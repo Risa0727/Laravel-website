@@ -38,7 +38,7 @@ Route::get('/', 'App\Http\Controllers\ArticlesController@index')->name('home'); 
 Route::resource('articles', 'App\Http\Controllers\ArticlesController');
 
 // test page
-Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+Route::get('/hello', 'App\Http\Controllers\HelloController@index')->name('hello');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
