@@ -24,8 +24,13 @@
                 {{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('DASHBOARD') }}
                 </x-jet-nav-link> --}}
+                {{-- <li>{{ Auth::user() }}</li> --}}
+                  @if ((Auth::user()) && Auth::user()->id == 1)
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('memo') }}">MEMO</a>
+                    </li>
+                  @endif
             </ul>
-
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto align-items-baseline">
                 <!-- Teams Dropdown -->
