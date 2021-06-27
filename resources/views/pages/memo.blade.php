@@ -2,16 +2,16 @@
 @section('content')
   <h1>Memo</h1>
   <hr>
-  <h2>Laravevl8でBootstrapを使うためにやったこと</h2>
+  <h2>[Laravevl8]Bootstrapを使うためにやったこと</h2>
   <ul class="list-group">
     <li class="list-group-item">Node.js/NMPインストール</li>
     <li class="list-group-item">Laravel Mixのインストール</li>
     <li class="list-group-item">Laravel uiインストール(<a target="_blank" href="https://uedive.net/2019/195/la6fa/">Ref</a>)</li>
   </ul>
 <br>
-  <h2>Laravevl8でFormを使うためにやったこと</h2>
+  <h2>[Laravevl8]Formを使うためにやったこと</h2>
   <ul class="list-group">
-    <li class="list-group-item">laravelcollective/htmlのインストール(<a href="https://ekimunyime.medium.com/working-with-forms-in-laravel-8-a28283301622">Ref</a>)</li>
+    <li class="list-group-item">laravelcollective/htmlのインストール(<a target="_blank" href="https://ekimunyime.medium.com/working-with-forms-in-laravel-8-a28283301622">Ref</a>)</li>
   </ul>
 
   <hr>
@@ -72,9 +72,14 @@
   </table>
 
   <hr>
-  <h2>Laravevl8でユーザ認証機能の追加</h2>
+  <h2>[Laravevl8]ユーザ認証機能の追加</h2>
   <ul class="list-group">
-    <li class="list-group-item">Laravel Jetsreamのインストール(<a href="https://note.com/laravelstudy/n/nf2179cc45a29">Ref</a>)</li>
+    <li class="list-group-item">Laravel Jetsreamのインストール(<a target="_blank" href="https://note.com/laravelstudy/n/nf2179cc45a29">Ref</a>)</li>
   </ul>
+  <h2>［Laravel8］Factoryの使い方</h2>
+  <ul class="list-group">
+    <li class="list-group-item">Laravel Jetsreamのインストール(<a target="_blank" href="https://qiita.com/Tomochan_taco/items/3d6574438eeb79bf7f29">Ref</a>)</li>
+  </ul>
+  <img src="{{  asset('images/How-to-use-Factory.jpg') }}" class="factory" alt="factory" width="500" height="250">
 
 @endsection
