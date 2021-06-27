@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
           ArticlesTableSeeder::class,
         ]);
+        \App\Models\Test::factory(10)->create();
 
     }
 }
