@@ -40,6 +40,10 @@ Route::resource('articles', 'App\Http\Controllers\ArticlesController');
 // test page
 Route::get('/hello', 'App\Http\Controllers\HelloController@index')->name('hello');
 Route::get('/hello/01', 'App\Http\Controllers\HelloController@hoge1')->name('hoge1');
+Route::get('/user_entry', 'App\Http\Controllers\UserEntryController@index')->name('user_entry');
+Route::get('/user_entry/{id}', 'App\Http\Controllers\UserEntryController@detail');
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
