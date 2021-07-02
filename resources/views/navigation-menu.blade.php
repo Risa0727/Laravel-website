@@ -25,7 +25,8 @@
                     {{ __('DASHBOARD') }}
                 </x-jet-nav-link> --}}
                 {{-- <li>{{ Auth::user() }}</li> --}}
-                  @if ((Auth::user()) && Auth::user()->id == 1)
+                  @auth
+                    @if (Auth::user()->id == 1)
                     <li class="nav-item">
                       <a class="nav-link" href="{{ route('memo') }}">MEMO</a>
                     </li>
@@ -35,7 +36,8 @@
                     <li class="nav-item">
                       <a class="nav-link" href="{{ route('hello') }}">TEST</a>
                     </li>
-                  @endif
+                    @endif
+                  @endauth
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto align-items-baseline">
