@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BbsEntry;
+use Validator;
 
 class BbsEntryController extends Controller
 {
@@ -18,6 +19,17 @@ class BbsEntryController extends Controller
 
     public function create(Request $request) {
       $input = $request->only('author', 'title', 'body');
+
+      $validator = Validator::make($input, [
+        'author' => 'required|string|max:30',
+        'title' => 'required|string|max:30',
+        'body' => 'required|string|max:100',
+      ]);
+
+      if ($validator->fails()) {
+        return redirect('/bbs')->withErrors($validator);
+      }
+
       // dd($input);
       $entry = new BbsEntry();
       $entry->author = $input['author'];
