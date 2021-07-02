@@ -5,6 +5,21 @@
 
 
 <h2>News</h2>
+<div class="pagination">
+  {{ $items->links() }}
+</div>
+<style type="text/css">
+.pagination {
+ display: inline-block;
+}
+.pagination .page-item {
+ color: black;
+ float: left;
+ padding: 8px 16px;
+ text-decoration: none;
+ list-style: none;
+}
+</style>
 @foreach ($items as $item)
   <div class="entry">
       <h5>{{ $item->title }}</h5>

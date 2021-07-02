@@ -10,7 +10,8 @@ class BbsEntryController extends Controller
 {
     public function index() {
       // dd(BbsEntry::all());
-      $items = BbsEntry::orderBy("id", 'desc')->get();
+      // $items = BbsEntry::orderBy("id", 'desc')->get();
+      $items = BbsEntry::orderBy("id", 'desc')->paginate(10);
 
       return view('bbs/bbs_entry_list', [
         "items" => $items
