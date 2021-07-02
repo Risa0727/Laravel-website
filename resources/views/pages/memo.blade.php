@@ -81,5 +81,12 @@
     <li class="list-group-item">Laravel Jetsreamのインストール(<a target="_blank" href="https://qiita.com/Tomochan_taco/items/3d6574438eeb79bf7f29">Ref</a>)</li>
   </ul>
   <img src="{{  asset('images/How-to-use-Factory.jpg') }}" class="factory" alt="factory" width="500" height="250">
-
+  <hr>
+  <h2>［Laravel8］[練習]　簡単な掲示板</h2>
+  <ul class="list-group">
+    <li class="list-group-item">#Laravel基礎 Webアプリケーションの開発(<a target="_blank" href="https://note.com/laravelstudy/n/n731ccef3756c">Ref</a>)</li>
+    <li class="list-group-item">
+      <a href="{{ route('bbs') }}">作成物</a>
+    </li>
+  </ul>
 @endsection

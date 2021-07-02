@@ -43,7 +43,7 @@ Route::get('/hello/01', 'App\Http\Controllers\HelloController@hoge1')->name('hog
 Route::get('/user_entry', 'App\Http\Controllers\UserEntryController@index')->name('user_entry');
 Route::get('/user_entry/{id}', 'App\Http\Controllers\UserEntryController@detail');
 
-Route::get('/bbs', 'App\Http\Controllers\BbsEntryController@index');
+Route::get('/bbs', 'App\Http\Controllers\BbsEntryController@index')->name('bbs');
 Route::post('/bbs/create', 'App\Http\Controllers\BbsEntryController@create');
 
 
