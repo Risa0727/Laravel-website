@@ -10,7 +10,7 @@ class CalendarController extends Controller
     public function show () {
       $calendar = new CalendarView(time());
 
-      return view('calendar.calendar', [
+      return view('calendar.index', [
         'calendar' => $calendar
       ]);
     }
