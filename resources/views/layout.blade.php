@@ -6,6 +6,7 @@
   <title></title>
 
   <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/calendar.css') }}">
   <script src="{{ asset('/js/app.js') }}"></script>
 </head>
 <body>
