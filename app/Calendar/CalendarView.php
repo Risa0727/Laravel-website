@@ -14,7 +14,11 @@ Class CalendarView {
     return $this->carbon->format('F, Y');
 
   }
-  function render() {
+
+  /**
+  * Output a calendar
+  */
+  public function render() {
 
     $html = [];
     $html[] = '<div class="calendar">';
@@ -30,9 +34,52 @@ Class CalendarView {
           $html[] = '<th style="color:red;">Sun</th>';
       		$html[] = '</tr>';
     		$html[] = '</thead>';
+
+
+        $html[] = '<tbody>';
+
+          $weeks = $this->getWeeks();
+          foreach ($weeks as $week) {
+            $html[] = '<tr class="' . $week->getClassName() . '">';
+            $days = $week->getDays();
+            foreach ($days as $day) {
+              $html[] = '<td class="' . $day->getClassName() . '">';
+              $html[] = $day->render();
+              $html[] = '</td>';
+            }
+            $html[] = '</tr>';
+          }
+        $html[] = '</tbody>';
+
   		$html[] = '</table>';
 		$html[] = '</div>';
 
     return implode("", $html);
   }
+
+  private function getWeeks() {
+    $weeks = [];
+
+    $firstDay = $this->carbon->copy()->firstOfMonth();
+    $lastDay = $this->carbon->copy()->lastOfMonth();
+
+    $week = new CalendarWeek($firstDay->copy());
+    $weeks[] = $week;
+
+    $tmpDay = $firstDay->copy()->addDay(7)->startofWeek();
+
+    // 月末までループ
+    // lte(): less than or equals(x <= y)
+    while ($tmpDay->lte($lastDay)) {
+      $week = new CalendarWeek($tmpDay, count($weeks));
+      $weeks[] = $week;
+
+      $tmpDay->addDay(7);
+    }
+
+    return $weeks;
+  }
+
+
+
 }
