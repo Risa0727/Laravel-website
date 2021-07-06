@@ -46,8 +46,15 @@ Route::get('/hello/01', 'App\Http\Controllers\HelloController@hoge1')->name('hog
 Route::get('/user_entry', 'App\Http\Controllers\UserEntryController@index')->name('user_entry');
 Route::get('/user_entry/{id}', 'App\Http\Controllers\UserEntryController@detail');
 
+// 掲示板
 Route::get('/bbs', 'App\Http\Controllers\BbsEntryController@index')->name('bbs');
 Route::post('/bbs/create', 'App\Http\Controllers\BbsEntryController@create');
+
+// カレンダー機能
+Route::get('holiday-setting', 'App\Http\Controllers\Calendar\HolidaySettingController@form')
+  ->name('holiday-setting');
+Route::post('holiday-setting', 'App\Http\Controllers\Calendar\HolidaySettingController@update')
+  ->name('update-holiday-setting');
 
 
 
