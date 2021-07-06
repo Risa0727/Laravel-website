@@ -2,6 +2,7 @@
 namespace App\Calendar;
 
 use Carbon\Carbon;
+use App\Models\Calendar\HolidaySetting;
 
 class CalendarWeek {
 
@@ -20,7 +21,7 @@ class CalendarWeek {
   /**
    * @return CalendarWeekDay[]
    */
-   function getDays() {
+   function getDays(HolidaySetting $setting) {
      $days = [];
 
      $startDay = $this->carbon->copy()->startOfWeek();
@@ -39,6 +40,7 @@ class CalendarWeek {
        }
        // This month
        $day = new CalendarWeekDay($tmpDay->copy());
+       $day->checkHoliday($setting);
        $days[] = $day;
        $tmpDay->addDay(1);
      }

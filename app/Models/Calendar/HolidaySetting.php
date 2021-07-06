@@ -4,6 +4,7 @@ namespace App\Models\Calendar;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Yasumi\Yasumi;
 
 class HolidaySetting extends Model
 {
@@ -23,6 +24,18 @@ class HolidaySetting extends Model
       "flag_sun",
       "flag_holiday",
     ];
+
+    private $holidays = null;
+
+    function loadHoliday($year) {
+      $this->holidays = Yasumi::create('Australia', $year);
+    }
+    function isHoliday($date) {
+
+      if (!$this->holidays) return false;
+      return $this->holidays->isHoliday($date);
+    }
+
     // Open
     function isOpenMonday() {
       return $this->flag_mon == HolidaySetting::OPEN;
