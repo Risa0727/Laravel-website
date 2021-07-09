@@ -39,12 +39,16 @@ class CalendarWeek {
          continue;
        }
        // This month
-       $day = new CalendarWeekDay($tmpDay->copy());
-       $day->checkHoliday($setting);
-       $days[] = $day;
+       $days[] = $this->getDay($tmpDay->copy(), $setting);
        $tmpDay->addDay(1);
      }
 
      return $days;
+   }
+   function getDay(Carbon $date, HolidaySetting $setting) {
+     $day = new CalendarWeekDay($date);
+     $day->checkHoliday($setting);
+
+     return $day;
    }
 }

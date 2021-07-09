@@ -2,9 +2,11 @@
 namespace App\Calendar;
 use Carbon\Carbon;
 use App\Models\Calendar\HolidaySetting;
+use App\Models\Calendar\ExtraHoliday;
 
 Class CalendarView {
-  private $carbon;
+  protected $carbon;
+  protected $holidays = [];
 
   function __construct($date){
 		$this->carbon = new Carbon($date);
@@ -22,6 +24,8 @@ Class CalendarView {
   public function render() {
     $setting = HolidaySetting::firstOrNew();
     $setting->loadHoliday($this->carbon->format('Y'));
+    // 臨時休業
+    $this->holidays = ExtraHoliday::getExtraHolidayWithMonth($this->carbon->format("Ym"));
 
     $html = [];
     $html[] = '<div class="calendar">';
@@ -60,22 +64,22 @@ Class CalendarView {
     return implode("", $html);
   }
 
-  private function getWeeks() {
+  protected function getWeeks() {
     $weeks = [];
 
     $firstDay = $this->carbon->copy()->firstOfMonth();
     $lastDay = $this->carbon->copy()->lastOfMonth();
 
-    $week = new CalendarWeek($firstDay->copy());
-    $weeks[] = $week;
+    // 1st week
+    $weeks[] = $this->getWeek($firstDay->copy());
 
     $tmpDay = $firstDay->copy()->addDay(7)->startofWeek();
 
     // 月末までループ
     // lte(): less than or equals(x <= y)
     while ($tmpDay->lte($lastDay)) {
-      $week = new CalendarWeek($tmpDay, count($weeks));
-      $weeks[] = $week;
+
+      $weeks[] = $this->getWeek($tmpDay->copy(), count($weeks));
 
       $tmpDay->addDay(7);
     }
@@ -83,6 +87,8 @@ Class CalendarView {
     return $weeks;
   }
 
-
+  protected function getWeek(Carbon $date, $index=0) {
+    return new CalendarWeek($date, $index);
+  }
 
 }

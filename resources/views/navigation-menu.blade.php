@@ -23,8 +23,9 @@
                     CALENDER
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('calendar') }}">CALENDER</a>
+                    <a class="dropdown-item" href="{{ route('calendar') }}">CALENDAR</a>
                     <a class="dropdown-item" href="{{ route('holiday-setting') }}">SETTINGS</a>
+                    <a class="dropdown-item" href="{{ route('extra-holiday-setting') }}">EXTRA SETTINGS</a>
                   </div>
                 </li>
                 {{-- <li class="nav-item">

@@ -57,6 +57,12 @@ class CalendarWeekDay {
       $this->isHoliday = true;
     }
   }
+  function getDateKey() {
+    return $this->carbon->format("Ymd");
+  }
+  function setHoliday($flag) {
+    $this->isHoliday = $flag;
+   }
 
 
 }
