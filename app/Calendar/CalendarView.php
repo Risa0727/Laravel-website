@@ -49,10 +49,13 @@ Class CalendarView {
           foreach ($weeks as $week) {
             $html[] = '<tr class="' . $week->getClassName() . '">';
             $days = $week->getDays($setting);
+            // foreach ($days as $day) {
+            //   $html[] = '<td class="' . $day->getClassName() . '">';
+            //   $html[] = $day->render();
+            //   $html[] = '</td>';
+            // }
             foreach ($days as $day) {
-              $html[] = '<td class="' . $day->getClassName() . '">';
-              $html[] = $day->render();
-              $html[] = '</td>';
+              $html[] = $this->renderDay($day);
             }
             $html[] = '</tr>';
           }
@@ -60,6 +63,17 @@ Class CalendarView {
 
   		$html[] = '</table>';
 		$html[] = '</div>';
+
+    return implode("", $html);
+  }
+  /**
+  * Display day
+  */
+  protected function renderDay(CalendarWeekDay $day) {
+    $html = [];
+    $html[] = '<td class="' . $day->getClassName() . '">';
+    $html[] = $day->render();
+    $html[] = '</td>';
 
     return implode("", $html);
   }
