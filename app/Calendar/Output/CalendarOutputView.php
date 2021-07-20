@@ -8,6 +8,7 @@ use App\Calendar\CalendarWeekDay;
 class CalendarOutputView extends CalendarView {
 
   protected function renderDay(CalendarWeekDay $day) {
+    // dd($day);
 
     $html = [];
     $extraHoliday = null;

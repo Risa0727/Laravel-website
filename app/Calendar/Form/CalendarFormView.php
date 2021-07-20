@@ -20,4 +20,9 @@ class CalendarFormView extends CalendarView {
 
       return $week;
     }
+    function render() {
+      return parent::render() .
+       "<input type='hidden' name='ym' value='" . $this->carbon->format("Ym") . "'/>" .
+       "<input type='hidden' name='date' value='" . $this->carbon->format("Y-m") . "'/>" ;
+    }
 }

@@ -37,9 +37,6 @@ Route::get('/memo', 'App\Http\Controllers\PageController@memo')->name('memo');
 Route::get('/', 'App\Http\Controllers\ArticlesController@index')->name('home'); // home画面
 Route::resource('articles', 'App\Http\Controllers\ArticlesController');
 
-// Calendar
-Route::get('/calendar', 'App\Http\Controllers\CalendarController@show')->name('calendar');
-
 // test page
 Route::get('/hello', 'App\Http\Controllers\HelloController@index')->name('hello');
 Route::get('/hello/01', 'App\Http\Controllers\HelloController@hoge1')->name('hoge1');
@@ -51,6 +48,7 @@ Route::get('/bbs', 'App\Http\Controllers\BbsEntryController@index')->name('bbs')
 Route::post('/bbs/create', 'App\Http\Controllers\BbsEntryController@create');
 
 // カレンダー機能
+Route::get('/calendar', 'App\Http\Controllers\CalendarController@show')->name('calendar');
 Route::get('holiday-setting', 'App\Http\Controllers\Calendar\HolidaySettingController@form')
   ->name('holiday-setting');
 Route::post('holiday-setting', 'App\Http\Controllers\Calendar\HolidaySettingController@update')
