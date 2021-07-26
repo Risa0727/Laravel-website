@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Livewire\Birthday;
+
 // use App\Http\Controllers\ArticlesController;
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +65,8 @@ Route::post('/extra-holiday-setting', 'App\Http\Controllers\Calendar\ExtraHolida
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+
+
+Route::get('/birthday', Birthday::class)->name('birthday');
