@@ -28,6 +28,9 @@
                     <a class="dropdown-item" href="{{ route('extra-holiday-setting') }}">EXTRA SETTINGS</a>
                   </div>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('birthday') }}">BIRTHDAY</a>
+                </li>
                 {{-- <li class="nav-item">
                   <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
                 </li> --}}
