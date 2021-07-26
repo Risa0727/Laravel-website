@@ -89,4 +89,18 @@
       <a href="{{ route('bbs') }}">作成物</a>
     </li>
   </ul>
+  <hr>
+  <h2>[Laravevl8]Livewireの基本的な使い方</h2>
+  <ul class="list-group">
+    <li class="list-group-item">
+      LivewireとはPHPのみでVueやReactのようなリアクティブな動的コンポーネントを作成できるライブラリです。
+    </li>
+    <li class="list-group-item">
+      Livewireのコンポーネント内ではBladeの構文を使用することができるので、VueやReactよりもLaravelとの相性が良くなっています。
+    </li>
+    <li class="list-group-item">[練習]LivewireでCRUDを実装してみる(<a target="_blank" href="https://kobatech-blog.com/livewire/">Ref</a>)</li>
+    <li class="list-group-item">
+      <a href="{{ route('birthday') }}">作成物</a>
+    </li>
+  </ul>
 @endsection
