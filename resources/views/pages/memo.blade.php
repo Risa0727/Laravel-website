@@ -90,7 +90,10 @@
     </li>
   </ul>
   <hr>
-  <h2>[Laravevl8]Livewireの基本的な使い方</h2>
+  <h2>
+    [Laravevl8]Livewireの基本的な使い方
+    <a href="https://laravel-livewire.com/" target="_blank"><img src="{{asset('images/livewire_logo.png')}}" width="100" height="40"></a>
+  </h2>
   <ul class="list-group">
     <li class="list-group-item">
       LivewireとはPHPのみでVueやReactのようなリアクティブな動的コンポーネントを作成できるライブラリです。
