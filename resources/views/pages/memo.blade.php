@@ -13,6 +13,16 @@
   <ul class="list-group">
     <li class="list-group-item">laravelcollective/htmlのインストール(<a target="_blank" href="https://ekimunyime.medium.com/working-with-forms-in-laravel-8-a28283301622">Ref</a>)</li>
   </ul>
+  <hr>
+  <h2>
+    [Laravevl]ログの出力先
+  </h2>
+  <ul class="list-group">
+    <li class="list-group-item">
+      アプリケーションログの出力先は,<span style='font-weight:bold;'>storage/logs/laravel.log</span>
+    </li>
+  </ul>
+
 
   <hr>
   <h2>標準的な CRUDパターンでの実装</h2>
